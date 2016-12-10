@@ -1,0 +1,45 @@
+                                                                     
+                                                                     
+                                                                     
+                                             
+drop table OrderDetails;
+drop table Orders;
+drop table Medicines;
+drop table CustomerReg;
+drop table DistOrders;
+drop table MedCategories;
+drop table Prescription;
+create table OrderDetails (ID INTEGER,OrderId int,ProductId int,Quantity int,Price double,PRIMARY KEY(Id));
+create table Orders (OrderId INTEGER,ContactName varchar(100),DeliveryAddress varchar(250),CCName varchar(100),CCNumber varchar(20),CCExpiryDate varchar(20),Amount double,PRIMARY KEY(OrderId));
+create table Medicines (ID INTEGER,Name varchar(100),Companyname varchar(100),Distname varchar(100),Mfgdate varchar(15), Expirydate varchar(15), Price double, Stockqty int,CategoryId int,PRIMARY KEY(ID));
+create table CustomerReg (ID INTEGER,stuname varchar(64),stmname varchar(64),stlname varchar(64),stemail varchar(64),stgender varchar(20),stpass varchar(20),stcpass varchar(20),stmobile varchar(20),stage varchar(5),staddress varchar(250),stdocname varchar(64),stdocaddress varchar(250),PRIMARY KEY(ID));
+create table DistOrders (ID INTEGER,ContactName varchar(100),CompanyName varchar(100),Address varchar(250),Medicine varchar(100),Price double,Quantity int,Amount double,CCName varchar(100),CCNumber varchar(20),CCExpiryDate varchar(20),PRIMARY KEY(ID));
+create table MedCategories (CID INTEGER,Category varchar(100),PRIMARY KEY(CID));
+create table Prescription (ID INTEGER,patientname varchar(100),doctorname varchar(100),pfilename varchar(100),msg varchar(500),PRIMARY KEY(ID));
+create table CustQuery (ID INTEGER,name  varchar(64),semail varchar(64),sub varchar(100),msg varchar(500),PRIMARY KEY(ID));
+
+insert into MedCategories (category) values("Allopathy");
+insert into MedCategories (category) values("Ayurvedic");
+insert into MedCategories (category) values("Homeopathy");
+insert into MedCategories (category) values("Food-Products");
+insert into Medicines (Name,companyname,distname,mfgdate,expirydate,Price,stockqty,CategoryId) values("Soltus OD","Ranbaxy","Hemant","04-2014","04-2018",75,10,1);
+insert into Medicines (Name,companyname,distname,mfgdate,expirydate,Price,stockqty,CategoryId) values("Risdone","Ranbaxy","Jayant","05-2014","05-2017",80,12,1);
+insert into Medicines (Name,companyname,distname,mfgdate,expirydate,Price,stockqty,CategoryId) values("Pacitane","Ranbaxy","Hemant","01-2013","01-2015",30,20,2);
+insert into Medicines (Name,companyname,distname,mfgdate,expirydate,Price,stockqty,CategoryId) values("Caldikind Plus","Ranbaxy","Jayant","06-2014","06-2015",100,6,2);
+insert into Medicines (Name,companyname,distname,mfgdate,expirydate,Price,stockqty,CategoryId) values("Sulpitac","Ranbaxy","Hemant","04-2014","04-2016",90,8,3);
+insert into Medicines (Name,companyname,distname,mfgdate,expirydate,Price,stockqty,CategoryId) values("Sizopin","Ranbaxy","Jayant","07-2014","07-2015",30,9,3);
+insert into CustomerReg (stuname,stmname,stlname,stemail,stgender,stpass,stcpass,stmobile,stage,staddress,stdocname,stdocaddress) values("Das","M","Gupta","das@gmail.com","Male","eagle","eagle","9087473812","25","Malad(W)","Vikram Seth","Andheri(w)");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
